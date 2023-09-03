@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN-PR</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightslategray;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.575);
+        }
+
+        p {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: darkslategray;
+        }
+
+        #txtvel {
+            line-height: 1.5em;
+        }
+
+        #btn,
+        #btnres {
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        #img {
+            display: none;
+            width: 10vw;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #multado {
+            display: none;
+            width: 18vw;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        h2 {
+            display: none;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .alinhamento {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="alinhamento">
+        <h1>Sistema de Multas</h1>
+        <p id="p">Velocidade do Veículo</p>
+        <input type="number" name="txtvel" id="txtvel">
+        <input id="btn" type="button" value="Verificar">
+        <input id="btnres" type="reset" value="Resetar">
+        <h2 id="res">Insira a velocidade do veículo</h2>
+        <img id="img"
+            src="https://isinaliza.vtexassets.com/arquivos/ids/169248/3545-placa-velocidade-maxima-permitida-60-kmh-r-19-aluminio-acm-50x50cm-1.jpg?v=636800596807430000"
+            alt="Placa limite 60km/h">
+        <img id="multado"
+            src="https://ouch-cdn2.icons8.com/crHB2X04Pl2WfdUMfE6G-XLU3xx2DhCVKGZzZ0GO-jM/rs:fit:811:456/extend:false/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNjg4/L2M1ZDc2ZDhhLTMz/ZjUtNDc2ZS05YmY5/LTNlNzU2OGVjZDQ0/Mi5zdmc.png"
+            alt="Multa">
+    </div>
+
+    <script>
+        btn.addEventListener('click', clicar)
+        txtvel.addEventListener('mouseenter', entrar)
+        txtvel.addEventListener('mouseout', sair)
+        btnres.addEventListener('click', zerar)
+
+        function clicar() {
+            var vel = Number(document.getElementById('txtvel').value)
+            if (vel <= 60) {
+                res.style.display = 'block'
+                res.innerText = (`Sua velocidade de ${vel} km/h está dentro do limite de velocidade`)
+                multado.style.display = 'none'
+                img.style.display = 'block'
+            } else {
+                res.innerText = (`Você foi MULTADO! Sua velocidade de ${vel} km/h estava acima do limite permitido`)
+                img.style.display = 'none'
+                res.style.display = 'block'
+                multado.style.display = 'block'
+            }
+        }
+        function entrar() {
+            txtvel.style.background = 'black'
+            txtvel.style.color = 'white'
+            p.style.color = 'white'
+            p.style.textshadow = '2px 2px 5px rgba(0, 0, 0, 0.575)'
+        }
+        function sair() {
+            txtvel.style.background = 'white'
+            txtvel.style.color = 'black'
+            p.style.color = 'darkslategray'
+        }
+        function zerar() {
+            txtvel.value = (0)
+            res.innerText = (`Insira a velocidade do veículo`)
+            res.style.display = 'none'
+            img.style.display = 'none'
+            multado.style.display = 'none'
+        }
+    </script>
+</body>
+
+</html>

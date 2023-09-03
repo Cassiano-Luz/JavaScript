@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa...</title>
+    <style>
+        body{
+            background-color: rgb(105, 105, 173);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Já me livrei da maldição!!</p>
+    <script>
+        var n1 = Number(window.prompt('Digite o 1º número')) // Number.parseInt para transformar a string que é a saída do prompt para um número, caso eu queira número com casa decimal utilizar Number.parseFloat
+        var n2 = Number(window.prompt('Digite o 2º número')) // Number.parseInt para transformar a string que é a saída do prompt para um número
+        var s = n1 + n2
+        window.alert(`A soma entre ${n1} e ${n2} é igual a ${s}`) // Concatenação
+        // (number + number) para adição
+        // (string + string) para concatenação
+
+        // No JS moderno posso utilizar somente Number() que o JS vai diferenciar Int de Float
+
+    </script>
+</body>
+</html>
