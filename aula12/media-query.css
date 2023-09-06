@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+
+@media  screen and (min-width: 1200px){/*Grandes Telas*/
+    section{
+        width: 575px;
+        height: 50vh;
+    }
+    
+}
+
