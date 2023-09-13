@@ -6,7 +6,7 @@ function checar() {
     if (fano.value.length == 0 || fano.value > ano) {
         window.alert('[ERRO] Verifique os dados e tente novamente!')
     } else {
-        var fsex = document.getElementByName('radsex')
+        var fsex = document.getElementsByName('radsex')
         var idade = ano - Number(fano.value)
         var gênero = ''
         var img = document.createElement('img')
@@ -43,7 +43,7 @@ function checar() {
             img.setAttribute('src', 'm-idosa.png')
         }
     }
-    res.innerHTML = `Detectamos ${gênero} com idade${idade}`
+    res.innerHTML = `Detectamos ${gênero} com idade de ${idade} anos`
     res.appendChild(img)
 }
 }
