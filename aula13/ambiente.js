@@ -4,8 +4,6 @@ var c = 1
     c++
 } while(c <= 3)
 
-
-
 // ESTRUTURA WHILE - TESTE LÓGICO NO INÍCIO, mais encontrada nos programas
 /*var c = 1
 while(c <= 5) {
