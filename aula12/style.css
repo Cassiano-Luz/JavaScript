@@ -47,7 +47,7 @@ section{
     padding: 10px;
 }
 
-#ano, #sexo, #verificar, #res{
+#ano, #sexo, #verificar, #resultado{
     margin-top: 20px;
 }
 
@@ -57,7 +57,7 @@ section{
     font-size: 1em;
 }
 
-#res{
+#resultado{
     font-size: 1em;
     text-align: center;
 }
