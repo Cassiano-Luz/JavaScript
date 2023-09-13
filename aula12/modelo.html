@@ -15,17 +15,17 @@
     <main>
         <section id="s">
             <div>
-                <p>Ano de Nascimento:
+                <p id="ano"><strong>Ano de Nascimento:</strong>
                     <input type="number" name="txtano" id="txtano" min="0">
                 </p>
-                <p>
-                    <label for="masc">Masculino</label>
+                <p id="sexo"> <strong>Sexo:</strong>
                     <input type="radio" name="radsex" id="masc" checked>
-                    <label for="fem">Feminino</label>
+                    <label for="masc">Masculino</label>
                     <input type="radio" name="radsex" id="fem" checked>
+                    <label for="fem">Feminino</label>
                 </p>
                 <p>
-                    <input id="verificar" type="button" value="Verificar">
+                    <input id="verificar" type="button" value="Verificar" onclick="checar">
                 </p>
             </div>
             <div id="res">

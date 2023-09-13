@@ -8,27 +8,10 @@ var ano = data.getFullYear()
 var fano = document.querySelector('txtano')
 var res = document.querySelector('res')
 
-
-var verificar = document.querySelector('verificar')
-window.addEventListener('click', verificar)
-
-function verificar() {
-    var hora = agora.getHours()
-    var minuto = agora.getMinutes()
-    msg.innerHTML = (`Neste momento são ${hora}:${minuto}`)
-    if (hora >= 0 && hora < 12) {
-        //'Bom Dia'
-        img.src = 'imagens/manha.jpg'
-        b.style.background = '#F4DFC1'
-    } else if (hora >= 12 && hora <= 18) {
-        //'Boa Tarde'
-        img.src = 'imagens/tarde.jpg'
-        b.style.background = '#C02D00'
-        msg.style.color = 'white'
+function checar() {
+    if (fano.value.lenght == 0 || fano.value > ano) {
+        window.alert('[ERRO] Verifique os dados e tente novamente!')
     } else {
-        //'Boa Noite'
-        img.src = 'imagens/noite.jpg'
-        b.style.background = '#2B5177'
-        msg.style.color = 'white'
+        window.alert('tudo ok')
     }
 }
