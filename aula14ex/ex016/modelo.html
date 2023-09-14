@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamos Contar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media-query.css">
+        
+</head>
+<body>
+    <header>
+        <h1>Vamos Contar</h1>
+    </header>
+    <main>
+        <section id="s">
+            <div>
+                <p id="inicio"><strong>Início:</strong>
+                    <input type="number" name="txtini" id="txtini">
+                </p>
+                <p id="fim"><strong>Fim:</strong>
+                    <input type="number" name="txtfim" id="txtfim">
+                </p>
+                <p id="pas"><strong>Passo:</strong>
+                    <input type="number" name="txtpas" id="txtpas">
+                </p>
+                <p>
+                    <input id="cont" type="button" value="Contar" onclick="contar()">
+                </p>
+            </div>
+            <div id="resultado">
+                Preparando a contagem...
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Cassiano Luz</p>
+    </footer>  
+    <script src="script.js"></script>  
+</body>
+</html>

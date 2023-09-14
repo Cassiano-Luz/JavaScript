@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    background-color: #0582e6;
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+}
+
+h1{
+    color: white;
+    font-size: 3em;
+}
+
+main{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(27deg, rgba(102,123,164,1) 0%, rgba(97,124,177,1) 15%, rgba(86,120,186,1) 30%, rgba(72,115,198,1) 45%, rgba(60,111,208,1) 60%, rgba(45,104,215,1) 75%, rgba(27,95,224,1) 90%, rgba(14,89,232,1) 100%);
+}
+
+section{
+    width: 50vw;
+    background-color: rgba(42, 42, 212, 0.39);
+    border-radius: 1em;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.432);
+    overflow: hidden;
+    padding: 20px;
+}
+
+#cont{
+    margin-top: 20px;
+    width: 100%;
+    font-size: 1em;
+}
+
+#txtfim, #txtpas, #txtini{
+    margin-top: 20px;
+    width: 300px;
+}
+
+#resultado{
+    margin-top: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+p{
+    color: white;
+}
+
+div#msg {
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+div#foto {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+}
+
+#img{
+    background-size: cover;
+}
+
+footer{
+    background-color: #247ddb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    position: absolute;
+    width: 100vw;
+    height: 10vh;
+}
+
+footer p:hover {
+    color: white;
+    text-shadow: 2px 2px 8px white;
+    transition: 0.3s;
+}
