@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabuada</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media-query.css">
-        
+
 </head>
+
 <body>
     <header>
         <h1>Tabuada</h1>
@@ -16,20 +18,24 @@
         <section id="s">
             <div>
                 <p id="inicio"><strong>Número:</strong>
-                    <input type="number" name="txtini" id="txtini"> <input id="exe" type="button" value="Gerar Tabuada" onclick="executar()">
+                    <input type="number" name="txtnum" id="txtnum"> <input id="exe" type="button" value="Gerar Tabuada"
+                        onclick="executar()">
                 </p>
-                <p>
-                    input
+                <p id="select">
+                    <select id="seltab" name="tabuada" size="10" multiple>
+                    <option>Digite um número acima</option>
+                    </select>
                 </p>
             </div>
             <div id="resultado">
-                Preparando a contagem...
+                
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; Cassiano Luz</p>
-    </footer>  
-    <script src="script.js"></script>  
+    </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>

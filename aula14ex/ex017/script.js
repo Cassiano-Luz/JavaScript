@@ -1,26 +1,31 @@
-function contar() {
-    var inicio = document.getElementById('txtini').value;
-    var fim = document.getElementById('txtfim').value;
-    var passo = document.getElementById('txtpas').value;
-    var texto = document.getElementById('resultado');
-    var res = '';
+function executar() {
+    let num = document.getElementById('txtnum').value;
+    let boxsel = document.getElementById('seltab');
+    let texto = document.getElementById('resultado');
 
-    if (passo == 0 || inicio === '') {
-        window.alert('Verifique o Passo igual a 0 ou Início vazio');
+    if (num === '') {
+        window.alert('Insira um número por favor!')
     } else {
-        inicio = Number(inicio);
-        fim = Number(fim);
-        passo = Number(passo);
-
-        while (inicio <= fim) {
-            res += inicio + ' &#x1F449; '; // Adiciona a palavra "teste" entre cada número
-            inicio += passo;
-            texto.innerHTML = res + ' &#127937 ';
+        num = Number(num);
+        let mult = '';
+        mult = Number(mult);
+        let res = '';
+        res = Number(res);
+        boxsel.innerHTML = ''
+        texto.innerHTML = ''
+        //res = num * mult;
+        for (mult = 1; mult <= 10; mult++) {
+            res = num * mult;
+            let item = document.createElement('option');
+            item.text = `${num} x ${mult} = ${res}`;
+            item.value = `boxsel${mult}`
+            boxsel.appendChild(item);
+            texto.innerHTML += `${num} x ${mult} = ${res} <br>`;
         }
     }
 }
 
-
+// num = 2
 
 /*var c = 1
 while (c <= 8) {
