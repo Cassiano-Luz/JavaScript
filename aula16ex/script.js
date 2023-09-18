@@ -53,7 +53,6 @@ function getQuantityOfNumbers(array) {
     if (array.length === 0) {
         return undefined; // Retorna undefined se o array estiver vazio
     }
-
     let num = array.length
     return num
 }
@@ -63,9 +62,7 @@ function findHigherValue(array) {
     if (array.length === 0) {
         return undefined; // Retorna undefined se o array estiver vazio
     }
-
     let maior = array[0]; //Assume que o primeiro elemento é o maior
-
     for (let i = 1; i < array.length; i++) {
         if (array[i] > maior) {
             maior = array[i]
@@ -79,9 +76,7 @@ function findLowestValue(array) {
     if (array.length === 0) {
         return undefined; // Retorna undefined se o array estiver vazio
     }
-
     let menor = array[0];
-
     for (let i = 1; i < array.length; i++) {
         if (array[i] < menor) {
             menor = array[i]; // Atualiza o menor valor se encontrarmos um valor menor
