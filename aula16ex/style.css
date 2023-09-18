@@ -60,7 +60,11 @@ section{
     width: 300px;
 }
 
-#resultado{
+#seltab{
+    width: 200px;
+}
+
+#txt1, #txt2, #txt3, #txt4, #txt5 {
     margin-top: 20px;
     color: white;
     font-weight: bold;
