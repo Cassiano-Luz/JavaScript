@@ -1,21 +1,33 @@
 let x = document.querySelector('.x')
-
 let o = document.querySelector('.o')
-
 let boxes = document.querySelectorAll('.box')
-
 let buttons = document.querySelectorAll('#buttons-container button')
-
+let btn2P = document.getElementById('2-players')
+let btn1P = document.getElementById('ai-player')
 let messageContainer = document.querySelectorAll('#message')
-
 let messageText = document.querySelector('#message p')
-
 let secondPlayer
 
 //contador de jogadas
 let player1 = 0
 let player2 = 0
 
+//Saber se é 2Players ou I.A
+
+
+// for (let i = 0; i < buttons.length; i++) {
+//     buttons[i].addEventListener('click', () => {
+//         secondPlayer = this.getAttribute('id')
+//         for(let j = 0; j < buttons.length; j++) {
+//             buttons[i].style.display = 'none'
+//         }
+//         setTimeout(()=>{
+//             let container = document.getElementById('container')
+//             container.classList.remove = 'hide'
+//         },500)
+
+//     })
+// }
 
 
 
@@ -135,3 +147,20 @@ function stopClick() {
         }
     },2005)
 }
+//_______________________________________________________________________________________________________________
+
+
+//Saber se é 2Players ou I.A
+// for (let i = 0; i < buttons.length; i++) {
+//     buttons[i].addEventListener('click', () => {
+//         secondPlayer = this.getAttribute('id')
+//         for(let j = 0; j < buttons.length; j++) {
+//             buttons[i].style.display = 'none'
+//         }
+//         setTimeout(()=>{
+//             let container = document.getElementById('container')
+//             container.classList.remove = 'hide'
+//         },500)
+
+//     })
+// }
