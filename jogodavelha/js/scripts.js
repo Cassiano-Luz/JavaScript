@@ -12,24 +12,9 @@ let secondPlayer
 let player1 = 0
 let player2 = 0
 
-//Saber se é 2Players ou I.A
 
 
-// for (let i = 0; i < buttons.length; i++) {
-//     buttons[i].addEventListener('click', () => {
-//         secondPlayer = this.getAttribute('id')
-//         for(let j = 0; j < buttons.length; j++) {
-//             buttons[i].style.display = 'none'
-//         }
-//         setTimeout(()=>{
-//             let container = document.getElementById('container')
-//             container.classList.remove = 'hide'
-//         },500)
-
-//     })
-// }
-
-
+messageText.classList.add('hide')
 
 for (let i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener('click', boxClick);
@@ -45,11 +30,39 @@ function boxClick(event) {
         //Computar jogada
         if (player1 == player2) {
             player1++;
+
+            if (secondPlayer == 'ai-player') {
+                
+                aiPlay()
+                player2++
+            }
         } else {
             player2++;
         }
     }
     checkWin();
+}
+
+//2Players ou IA
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function () {
+
+        secondPlayer = this.getAttribute('id')
+
+        for (let j = 0; j < buttons.length; j++){
+
+            buttons[j].style.display = 'none'
+
+        }
+            
+        setTimeout(function () {
+
+            let container = document.querySelector('#container')
+            container.classList.remove('hide')
+
+        }, 400)
+
+    })
 }
 
 //Função Escolha do jogador
@@ -65,28 +78,26 @@ function checkEl(player1, player2) {
 //Função Checar vitória
 function checkWin() {
 
-    if (!checkDraw()) {
-        // Lista de todas as combinações vencedoras
-        const winCombination = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8], // Linhas
-            [0, 3, 6], [1, 4, 7], [2, 5, 8], // Colunas
-            [0, 4, 8], [2, 4, 6]             // Diagonais
-        ];
+    const winCombination = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Linhas
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Colunas
+        [0, 4, 8], [2, 4, 6]             // Diagonais
+    ];
 
-        // Verifica se alguma combinação vencedora está presente no tabuleiro
-        for (let combination of winCombination) {
-            const [a, b, c] = combination;
-            if (boxes[a].textContent === x.textContent && boxes[b].textContent === x.textContent && boxes[c].textContent === x.textContent) {
-                declareWinner(x)
-            } else if (boxes[a].textContent === o.textContent && boxes[b].textContent === o.textContent && boxes[c].textContent === o.textContent) {
-                declareWinner(o)
-            }
+    for (let combination of winCombination) {
+        const [a, b, c] = combination;
+        if (boxes[a].textContent === x.textContent && boxes[b].textContent === x.textContent && boxes[c].textContent === x.textContent) {
+            declareWinner(x);
+            return;
+        } else if (boxes[a].textContent === o.textContent && boxes[b].textContent === o.textContent && boxes[c].textContent === o.textContent) {
+            declareWinner(o);
+            return;
         }
-
-    } else {
-        declareWinner()
     }
 
+    if (checkDraw()) {
+        declareWinner('empate');
+    }
 }
 
 //Função Checar empate
@@ -101,7 +112,7 @@ function checkDraw() {
 
 //Função Declarar vencedor
 function declareWinner(winner) {
-    
+
     let scoreboardX = document.querySelector('#scoreboard-1')
     let scoreboardY = document.querySelector('#scoreboard-2')
     let msg = ''
@@ -112,22 +123,27 @@ function declareWinner(winner) {
     } else if (winner === o) {
         scoreboardY.textContent = parseInt(scoreboardY.textContent) + 1
         msg = 'O Player 2 (O) Venceu!'
+        messageText.style.display = 'block'
     } else {
-        msg = "Velha! Empatou, jogue novamente."
+        msg = "Velha! Jogue novamente."
+        messageText.innerHTML = msg
     }
+
     messageText.innerHTML = msg
-    messageText.style.display = 'block';
-            
+    messageText.classList.remove('hide')
+
     //Esconder mensagem
     setTimeout(function () {
-        messageText.style.display = 'none'
+    messageText.classList.add('hide')
         //Limpa Boxes
         clearBoxes()
+        resetGame()
     }, 2000)
     //Zerar jogadas
     player1 = 0
     player2 = 0
     stopClick()
+
 }
 
 //Função Limpar Caixas
@@ -141,26 +157,45 @@ function stopClick() {
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].removeEventListener('click', boxClick);
     }
-    setTimeout(function (){
+    setTimeout(function () {
         for (let i = 0; i < boxes.length; i++) {
             boxes[i].addEventListener('click', boxClick);
         }
-    },2005)
+    }, 2005)
 }
+
+//Função resetar jogo
+function resetGame() {
+    player1 = 0;
+    player2 = 0;
+    clearBoxes();
+}
+
+//Função AI realizando jogadas
+function aiPlay() {
+
+        let cloneO = o.cloneNode(true)
+        counter = 0
+        filled = 0
+
+        for (let i = 0; i < boxes.length; i++) {
+
+            let randomNumber = Math.floor(Math.random() * 5)
+
+            if (boxes[i].childNodes[0] == undefined) {
+                if (randomNumber <= 1) {
+                    boxes[i].appendChild(cloneO)
+                    counter++
+                    break
+                }
+            } else {
+                filled++
+            }
+
+        }
+
+        if (counter == 0 && filled < 9 && !checkWin()) {
+                aiPlay()
+            }
+        }
 //_______________________________________________________________________________________________________________
-
-
-//Saber se é 2Players ou I.A
-// for (let i = 0; i < buttons.length; i++) {
-//     buttons[i].addEventListener('click', () => {
-//         secondPlayer = this.getAttribute('id')
-//         for(let j = 0; j < buttons.length; j++) {
-//             buttons[i].style.display = 'none'
-//         }
-//         setTimeout(()=>{
-//             let container = document.getElementById('container')
-//             container.classList.remove = 'hide'
-//         },500)
-
-//     })
-// }

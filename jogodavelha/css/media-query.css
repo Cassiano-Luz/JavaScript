@@ -1,0 +1,55 @@
+@charset 'UTF-8';
+
+/*TYPICAL DEVIDE BREAKPOINTS
+Pequenas Telas: até 600px
+Celular: de 600px até 768px
+Tablet: 768px até 992px
+Desktop: 992px até 1200px
+Telas Grandes: Acima de 1200px
+*/
+
+
+/* @media screen and (min-width: 992px) { */
+    /*CONFIGURAÇÃO TELAS GRANDES*/
+    
+    /* body {
+        background-image: url(../imagens/capa.jpg);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    
+    section#login {
+        width: 40vw;
+        height: 40vh;
+    }
+
+    section#login > div#imagem {
+        display: none;
+    }
+
+    #formulario h1 {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    #formulario p {
+        font-size: 1.2em;
+    }
+
+    #iuser, #ipass{
+        width: 250px;
+        height: 25px;
+    }
+
+    form > input[type=submit]{
+        margin-top: 14px;
+        width: 286px;
+    }
+
+    form > a {
+        width: 286px;
+        margin-top: 14px;
+    }
+} */

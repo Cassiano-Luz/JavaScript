@@ -1,5 +1,7 @@
 @charset 'UTF-8';
 
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -12,8 +14,23 @@ body {
     background-color: rgba(0, 0, 0, 0.671) !important;
 }
 
+header {
+    height: 200px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 h1 {
-    font-size: 42px;
+    font-size: 140px !important;
+    font-family: 'Agbalumo';
+    text-shadow: 0px 0px 35px rgba(0, 0, 0, 0.281), 0px 0px 15px rgba(255, 255, 255, 0.404);
+}
+
+h2 {
+    font-size: 50px !important;
+    font-family: 'Agbalumo';
 }
 
 /* botões */
@@ -28,71 +45,89 @@ h1 {
 
 #container {
     display: flex;
-    width: 300px;
+    width: 450px;
     margin: 0;
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
-    top: 100px;
+    top: 50px;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* #container :hover {
+    background-color: #ffffff13;
+} */
+
 .box {
-    height: 100px;
+    height: 150px;
     border: 5px solid black;
     box-sizing: border-box;
     flex: 1 1 33%
 }
 
-#block-1, #block-2, #block-3 {
+
+#block-1,
+#block-2,
+#block-3 {
     border-top: none;
 }
 
-#block-1, #block-4, #block-7 {
+#block-1,
+#block-4,
+#block-7 {
     border-left: none;
 }
 
-#block-7, #block-8, #block-9 {
+#block-7,
+#block-8,
+#block-9 {
     border-bottom: none;
 }
 
-#block-3, #block-6, #block-9 {
+#block-3,
+#block-6,
+#block-9 {
     border-right: none;
 }
 
 /* símbolos */
 
 .x {
-    font-size: 65px;
-    color: red;
+    font-size: 6em;
+    color: #eb350d;
+    text-shadow: 0px 0px 35px #D43916, 0px 0px 20px #D43916;
     display: inline-block;
-    line-height: 100px;
+    margin-top: 0px;
 }
 
 .o {
-    width: 52px;
-    height: 52px;
-    border: 5px solid rgba(0, 255, 0, 0.8);
+    display: flex;
+    width: 50%;
+    height: 50%;
+    border: 7px solid #1f42dfef;
+    transition: box-shadow 0.2s;
+    box-shadow: 0px 0px 35px #37529F, 0px 0px 15px #37529F inset;
     border-radius: 50%;
     display: inline-block;
-    margin-top: 25px;
+    margin-top: 25%;
     color: transparent;
     font-size: 0;
-    }
+
+}
 
 /* classe hide */
 
 
-/* .hide {
+.hide {
     display: none !important;
-} */
+}
 
 /* placar */
 
 #scoreboard-container {
     font-weight: bold;
-    margin-top: 200px;
+    margin-top: 50px;
     font-size: 25px;
     position: relative;
     margin-left: auto;
@@ -104,15 +139,15 @@ h1 {
 }
 
 #x-scoreboard {
-    color: red;
+    color: #eb350d;
     margin-right: 3px;
 }
 
 #o-scoreboard {
     display: inline-block;
-    width: 18px;
-    height: 18px;
-    border: 2px solid green;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #1f42dfef;
     border-radius: 50%;
     margin-right: 3px;
 }
@@ -132,22 +167,36 @@ h1 {
     background-color: rgba(0, 0, 0, 0.800);
     color: white;
     padding: 20px;
-    display: none;
 }
 
 
-.hide > .x, .hide > .o{
+.hide>.x,
+.hide>.o {
     display: none;
 }
 
 #velha1 {
     position: absolute;
-    top: 50px;
+    top: 100px;
     left: 50px;
 }
 
 #velha2 {
     position: absolute;
-    top: 50px;
+    top: 100px;
     right: 50px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.250);
+}
+
+footer>p:hover {
+    color: white;
+    text-shadow: 2px 2px 8px white;
+    transition: 0.3s;
 }
